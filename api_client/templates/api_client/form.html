@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON-RPC Client</title>
+</head>
+<body>
+    <h1>JSON-RPC Client</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="method">Method:</label>
+        <input type="text" id="method" name="method" required>
+        <br>
+        <label for="params">Parameters (comma-separated):</label>
+        <input type="text" id="params" name="params">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if response %}
+        <h2>Response:</h2>
+        <pre>{{ response }}</pre>
+    {% endif %}
+</body>
+</html>
